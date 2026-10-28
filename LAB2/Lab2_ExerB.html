@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Course Feedback</title>
+</head>
+<body>
+
+    <!-- 
+    Error List & Debugging Log:
+    - Error 1 (Line 10): Incorrectly used </head> instead of closing the </header> tag.
+    - Error 2 (Line 20): Used <td> instead of <th> for "Rating" in the table headers.
+    - Error 3 (Line 28): Broke table structure using colspan="3" on a 3-column table without balancing cells. (Re-adjusted to normal 3-column span).
+    - Error 4 (Line 32): Syntax error with missing closing tag for '<td>Semantic HTML'.
+    - Error 5 (Line 40): The <label for="name"> was not linked to the <input id="fullname">. Changed id to "name".
+    - Error 6 (Line 42 & 44): Radio buttons had different names ("good", "poor"), allowing multiple selections. Changed name to "rating" for both.
+    - Error 7 (Line 45): The label for="poor" was below the input without being correctly grouped, and poor ID/For matchups. Fixed label linkages.
+    - Error 8 (Line 49): Typo in the closing form tag, written as </from> instead of </form>.
+    -->
+
+    <header>
+        <h1>CSF3133 Course Feedback</h1>
+    </header>
+
+    <nav>
+        <a href="#results">Results</a> | 
+        <a href="#form">Feedback Form</a> | 
+        <a href="#comments">Student Comments</a>
+    </nav>
+
+    <!-- Results Section -->
+    <section id="results">
+        <h2>Feedback Summary</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Topic</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Introduction to HTML</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tables and Forms</td>
+                    <td>4.2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Semantic HTML</td>
+                    <td>4.0</td>
+                </tr>
+                <!-- Part 2: Extended table rows for Week 4 & 5 -->
+                <tr>
+                    <td>4</td>
+                    <td rowspan="2">Mini Project</td>
+                    <td>4.8</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>4.6</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Average Rating</td>
+                    <td>4.42</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section id="form">
+        <h2>Give Your Feedback</h2>
+        <form action="submit_feedback.php" method="post">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+            
+            <!-- Part 2: Added Email Text Input -->
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <!-- Part 2: Dropdown Section Selection -->
+            <p>
+                <label for="section">Section/Group:</label><br>
+                <select id="section" name="section">
+                    <option value="">-- Select Section --</option>
+                    <option value="S1">Section 1</option>
+                    <option value="S2">Section 2</option>
+                    <option value="S3">Section 3</option>
+                </select>
+            </p>
+
+            <!-- Debugged & Extended Radio Option (Grouped under 'rating' with third option 'average') -->
+            <fieldset>
+                <legend>Overall rating:</legend>
+                
+                <input type="radio" id="good" name="rating" value="good">
+                <label for="good">Good</label><br>
+                
+                <input type="radio" id="average" name="rating" value="average">
+                <label for="average">Average</label><br>
+                
+                <input type="radio" id="poor" name="rating" value="poor">
+                <label for="poor">Poor</label>
+            </fieldset>
+
+            <!-- Part 2: Checkbox Group 'Topics I want more practice on' -->
+            <fieldset>
+                <legend>Topics I want more practice on:</legend>
+                
+                <input type="checkbox" id="topic1" name="practice_topics" value="Tables">
+                <label for="topic1">Tables</label><br>
+                
+                <input type="checkbox" id="topic2" name="practice_topics" value="Forms">
+                <label for="topic2">Forms</label><br>
+                
+                <input type="checkbox" id="topic3" name="practice_topics" value="Semantic HTML">
+                <label for="topic3">Semantic HTML</label><br>
+                
+                <input type="checkbox" id="topic4" name="practice_topics" value="Forms Styling">
+                <label for="topic4">Complex Forms & Input Validation</label>
+            </fieldset>
+
+            <!-- Debugged Checklist & Submit Button -->
+            <p>
+                <input type="checkbox" id="lab" name="lab" value="yes">
+                <label for="lab">I attended all labs</label>
+            </p>
+            
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </section>
+    <!-- Part 2: New Comments Section -->
+    <section id="comments">
+        <h2>Student Comments</h2>
+        <article>
+            <h3>John Doe</h3>
+            <p>"The course is really engaging, especially the hands-on lab exercises that challenge our debugging skills!"</p>
+        </article>
+        <article>
+            <h3>Jane Smith</h3>
+            <p>"Understanding semantic HTML was really eye-opening. Looking forward to mastering layouts and forms next!"</p>
+        </article>
+    </section>
+    
+    <footer>
+        <p>Copyright &copy; 2026 CSF3133</p>
+    </footer>
+
+</body>
+</html>
