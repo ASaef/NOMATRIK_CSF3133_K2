@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f4f8; /* Soft coastal light blue-gray background */
+    color: #1e293b; /* High-contrast dark slate text */
+    line-height: 1.7;
+}
+
+/* Header Styling (UMT Deep Navy & Purple/Teal Theme) */
+header {
+    background: linear-gradient(135deg, #1b1464 0%, #006699 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+header .tagline {
+    font-size: 1.1rem;
+    color: #bae6fd;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #0f172a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation Hover Effect */
+nav ul li a:hover {
+    background-color: #0284c7;
+    color: #fef08a;
+}
+
+/* Main Content Layout */
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #006699;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1b1464;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.ext-link {
+    color: #006699;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ext-link:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling (Borders, Alternating Row Colors, Padding, Hover Effects) */
+.table-container {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 0.9rem 1rem;
+    border: 1px solid #cbd5e1;
+}
+
+thead th {
+    background-color: #1b1464;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Table Row Hover Effect */
+tbody tr:hover {
+    background-color: #e0f2fe;
+    transition: background-color 0.2s ease;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #e2e8f0;
+    color: #334155;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-top: 1px solid #cbd5e1;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 0.75rem;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    p {
+        text-align: left;
+    }
+}
